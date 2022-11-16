@@ -16,7 +16,7 @@ class Director:
         while self.is_playing:
             self.get_inputs ()
             self.do_updates ()
-            self.print_output()
+            # self.print_output()
             self.get_guess()
         
 
@@ -29,28 +29,27 @@ class Director:
         """
 
         play_turn = input ("Higher or lower? [h/l]")
-
         if play_turn == "h":
             self.score += 100
-
-        play_turn = input ("Play again? [y/n]")
-        self.is_playing = (play_turn == "y")
-        
-        
+        card = Card()
+        self.card = card.see_card()
+        print (f"The new card is: {self.card}")
 
     def do_updates (self):
         if not self.is_playing:
             return
         card = Card ()
         self.card= card.see_card()  
-        
+    
 
+    # def print_output (self):
+    #     print (f"The car is: {self.card}")
 
-    def print_output (self):
-        print (f"The car is: {self.card}")
+    # def get_guess (self):
+    #     self.guess = input ("Higher or lower? [h/l]")
 
-    def get_guess (self):
-        self.guess = input ("Higher or lower? [h/l]")
+        # play_turn = input ("Play again? [y/n]")
+        # self.is_playing = (play_turn == "y")
     
         
         
